@@ -1,9 +1,10 @@
 import { PrismaClient } from "@prisma/client";
+import { pagination } from "prisma-extension-pagination";
 
 // Learn more about instantiating PrismaClient in Next.js here: https://www.prisma.io/docs/data-platform/accelerate/getting-started
 
 const prismaClientSingleton = () => {
-  return new PrismaClient();
+  return new PrismaClient().$extends(pagination());
 };
 
 declare const globalThis: {

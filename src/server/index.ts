@@ -18,6 +18,20 @@ const appRouter = router({
       const user = await db.user.create({ data: { name: input.name } });
       return user;
     }),
+  userPageList: publicProcedure
+    .input(
+      z.object({
+        page: z.number().positive().default(1),
+        limit: z.number().positive().default(10),
+      })
+    )
+    .query(async ({ input }) => {
+      const [users, meta] = await db.user.paginate().withPages({
+        page: input.page,
+        limit: input.limit,
+      });
+      return [users, meta];
+    }),
 });
 
 // Export type router type signature,

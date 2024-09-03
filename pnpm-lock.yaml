@@ -14,6 +14,9 @@ dependencies:
   '@trpc/server':
     specifier: 11.0.0-rc.482
     version: 11.0.0-rc.482
+  prisma-extension-pagination:
+    specifier: ^0.7.4
+    version: 0.7.4(@prisma/client@5.18.0)
   zod:
     specifier: ^3.23.8
     version: 3.23.8
@@ -1392,6 +1395,14 @@ packages:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /prisma-extension-pagination@0.7.4(@prisma/client@5.18.0):
+    resolution: {integrity: sha512-MmfyinDbcTucvttlO8UOrLqKW7DxlXe3ToiUZcLbvhGHHPewHKKWvucVnLHsYSzEIbEE1YfK/hsYdmpoRzkAAg==}
+    peerDependencies:
+      '@prisma/client': ^4.9.0 || ^5.0.0
+    dependencies:
+      '@prisma/client': 5.18.0(prisma@5.18.0)
+    dev: false
 
   /prisma@5.18.0:
     resolution: {integrity: sha512-+TrSIxZsh64OPOmaSgVPH7ALL9dfU0jceYaMJXsNrTkFHO7/3RANi5K2ZiPB1De9+KDxCWn7jvRq8y8pvk+o9g==}
